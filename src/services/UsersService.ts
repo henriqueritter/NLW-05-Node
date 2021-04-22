@@ -27,5 +27,17 @@ class UsersService {
     //if not, save on DB,
     return user;
   }
+
+  async findByEmail(email: string) {
+    const user = await this.usersRepository.findOne({
+      email,
+    });
+    // if exists, return user
+    if (user) {
+      return user;
+    } else {
+      return;
+    }
+  }
 }
 export { UsersService };
