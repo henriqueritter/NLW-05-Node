@@ -53,6 +53,33 @@ io.on("connect", (socket) => {
       user_id,
     });
 
-    // salvar conexao com socket id, user_id
+    // list user messages
+    const allMessages = await messagesService.listByUser(user_id);
+
+    // emit evento que sera ouvido pelo public/js/chat.js
+    socket.emit("client_list_all_messages", allMessages);
+
+    // Exibe novo usuario sem atendimento na tela do admin
+    const allUsers = await connectionsService.findAllWithoutAdmin();
+    io.emit("admin_list_all_users", allUsers);
+  });
+
+  socket.on("client_send_to_admin", async (params) => {
+    const { text, socket_admin_id } = params;
+
+    // id do socket do usuario
+    const socket_id = socket.id;
+    // recupera o id do usuario pelo socket
+    const { user_id } = await connectionsService.findBySocketID(socket_id);
+
+    const message = await messagesService.create({
+      text,
+      user_id,
+    });
+
+    io.to(socket_admin_id).emit("admin_receive_message", {
+      message,
+      socket_id,
+    });
   });
 });

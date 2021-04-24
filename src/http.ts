@@ -20,6 +20,9 @@ app.set("view engine", "html");
 app.get("/pages/client", (request, response) => {
   return response.render("html/client.html");
 });
+app.get("/pages/admin", (request, response) => {
+  return response.render("html/admin.html");
+});
 
 // server http to Socketio
 const http = createServer(app); //Cria protocolo HTTP
