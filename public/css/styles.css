@@ -14,10 +14,10 @@ body {
   width: 153px;
   height: 56px;
 
-  background: #8257e6;
+  background: #43ff36;
   border-radius: 68px;
   text-align: center;
-  color: #fff;
+  color: #000;
   outline: none;
   border: 0;
 
@@ -45,7 +45,7 @@ body {
   width: 320px;
   height: 56px;
 
-  background: #8257e6;
+  background: #43ff36;
   border-radius: 16px 16px 0px 0px;
 
   display: flex;
@@ -53,7 +53,7 @@ body {
 }
 
 .in_support_header span {
-  color: #fff;
+  color: #000;
   display: flex;
   align-items: center;
 }
@@ -209,9 +209,9 @@ input[type="text"]:focus {
   width: 121px;
   height: 40px;
 
-  background: #8257e6;
+  background: #43ff36;
   border-radius: 4px;
-  color: #fff;
+  color: #000;
   border: none;
   cursor: pointer;
 }
@@ -312,7 +312,7 @@ input[type="text"]:focus {
 
 .admin_message_client {
   width: 300px;
-  background: #6f5eab;
+  background: #0f992b;
   padding: 10px;
   margin: 10px;
   color: #eee;
@@ -329,7 +329,7 @@ input[type="text"]:focus {
 }
 
 .in_support {
-  background: #8d7aef;
+  background: #43ff36;
   color: #fff;
   font-size: 17px;
 }

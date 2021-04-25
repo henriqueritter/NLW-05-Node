@@ -30,6 +30,7 @@ document.querySelector("#start_chat").addEventListener("click", (event) => {
     });
   });
   text.value = "";
+  text.focus;
 
   // list client messages (vem do services/client.ts)
   socket.on("client_list_all_messages", (messages) => {
